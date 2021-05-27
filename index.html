@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.scss">
+    <link rel="stylesheet" href="style1.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+        <a href="" class="floating-button">Home</a>
+        <a href="" class="floating-button">People</a>   
+        <a href="" class="floating-button">Nature</a>  
+        </div>
+    </header>
+
+    <form id="main" v-cloak>
+
+        <div class="bar">
+            <input type="text" v-model="searchString" placeholder="Введите название статьи" />
+        </div>
+    <div class="box">
+        <ul>
+           
+            <li v-for="article in filteredArticles">
+                <a v-bind:href="article.url"><img v-bind:src="article.image" /></a>
+                <p>{{article.title}}</p>
+            </li>
+          
+        </ul>
+    </div>
+    </form>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
